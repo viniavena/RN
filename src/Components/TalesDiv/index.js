@@ -5,7 +5,7 @@ import TalesPics from "../TalesPics/index";
 export default function TalesDiv(){
     return(
     <View style={styles.container}>
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator = {false}>
             <TalesPics picsSource={require("../Images/Tales/profile1.png")}  userName="Igor" />
             <TalesPics picsSource={require("../Images/Tales/profile2.png")}  userName="Pamela" />
             <TalesPics picsSource={require("../Images/Tales/profile3.png")}  userName="John" />
