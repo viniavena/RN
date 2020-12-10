@@ -6,7 +6,7 @@ import Header from '../../Components/Header';
 import TalesDiv from '../../Components/TalesDiv';
 import Footer from '../../Components/Footer';
 
-export function Feed() {
+const Feed = () => {
     const [picList, setList] = useState ([
         {
             id: 1,
@@ -86,7 +86,7 @@ export function Feed() {
             keyExtractor={item => item.id.toString()}
             renderItem={({ item }) => < Item userName={item.userName} picsSource={item.picsSource} subtitle={item.subtitle} said={item.said} numLikes={item.numLikes}/>
         }/>
-        <Footer />
+        <Footer AddPost = {AddPost}/>
     </View>
     );
 }

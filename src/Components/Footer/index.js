@@ -4,16 +4,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons'; 
 
-import {AddPost} from '../../Pages/Feed';
-
-export default function Footer() {
+const Footer = ({ AddPost }) => {
     return(
         <View style={styles.container} >
             <View style={styles.icons} >
                 <TouchableOpacity style={styles.home}>
                      <Entypo name="home" size={30} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.add} onPress={() => AddPost()}>
+                <TouchableOpacity style={styles.add} onPress={(AddPost)}>
                     <FontAwesome name="bolt" size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.profile}>
