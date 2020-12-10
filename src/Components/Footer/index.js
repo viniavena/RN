@@ -3,8 +3,8 @@ import { View, StyleSheet, TouchableOpacity} from "react-native";
 import { Ionicons } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons'; 
-import { MaterialIcons } from '@expo/vector-icons'; 
 
+import {AddPost} from '../../Pages/Feed';
 
 export default function Footer() {
     return(
@@ -13,7 +13,7 @@ export default function Footer() {
                 <TouchableOpacity style={styles.home}>
                      <Entypo name="home" size={30} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.add}>
+                <TouchableOpacity style={styles.add} onPress={() => AddPost()}>
                     <FontAwesome name="bolt" size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.profile}>
@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
 
 
 /*
+import { MaterialIcons } from '@expo/vector-icons'; 
+
+
+
 <TouchableOpacity style={styles.theme}>
 <MaterialIcons name="lightbulb" size={30} color="white" />
 </TouchableOpacity>

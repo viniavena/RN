@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, View, FlatList} from 'react-native';
+
 import Item from '../../Components/Item';
 import Header from '../../Components/Header';
 import TalesDiv from '../../Components/TalesDiv';
 import Footer from '../../Components/Footer';
 
-export default function Feed() {
-    const picList = [
+export function Feed() {
+    const [picList, setList] = useState ([
         {
             id: 1,
+            userName: "consultor_fluxo",
+            subtitle: "Galera do PAME ta em choque 🤯",
+            said: "dudu_henriques: work hard 🔨💪"
+        },
+
+        {
+            id: 2,
             userName: "julia_chagas",
             subtitle: "Exausta com esse PAME, mas com o sorriso no rosto",
             said: "bruno_aguiar: Caveira 💀☠️",
@@ -16,7 +24,7 @@ export default function Feed() {
         },
     
         {
-            id: 2,
+            id: 3,
             userName: "julia_chagas",
             picsSource: require("../../Components/Images/Posts/post4.png"),
             subtitle: "Que sede 🐫🤤🥵 ",
@@ -25,7 +33,7 @@ export default function Feed() {
         },
     
         {
-            id: 3,
+            id: 4,
             userName: "isabela_farina",
             picsSource: require("../../Components/Images/Posts/post3.png"),
             subtitle: "❄️🥶🏔",
@@ -34,7 +42,7 @@ export default function Feed() {
         },
     
         {
-            id: 4,
+            id: 5,
             userName: "vini_avena",
             picsSource: require("../../Components/Images/Posts/post2.png"),
             subtitle: "Vivendo ✌️",
@@ -43,14 +51,29 @@ export default function Feed() {
         },
 
         {
-            id: 5,
+            id: 6,
             userName: "gabriel_pupe",
             picsSource: require("../../Components/Images/Posts/post1.png"),
             subtitle: "Classic 🤙",
             said: "dudu_henriques: Haole",
             numLikes: 23,
         }
-    ];
+    ]);
+
+    const function AddPost(){
+        const newPost = {
+            id: 7,
+            userName: "consultor_fluxo",
+            subtitle: "Galera do PAME ta em choque 🤯",
+            said: "dudu_henriques: work hard 🔨💪"
+        };
+
+        let newList = picList;
+
+        newList.push(newPost);
+
+        setList(newList);
+    }
 
     return(
     <View style={styles.container}>
