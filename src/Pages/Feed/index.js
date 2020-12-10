@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, FlatList, Image} from 'react-native';
+import { StyleSheet, View, FlatList} from 'react-native';
 import Item from '../../Components/Item';
 import Header from '../../Components/Header';
 import TalesDiv from '../../Components/TalesDiv';
