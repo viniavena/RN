@@ -1,12 +1,24 @@
 import React from "react";
-import { View, StyleSheet, Image} from "react-native";
+import { View, StyleSheet, TouchableOpacity} from "react-native";
+import { Ionicons } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
+
 
 export default function Footer() {
     return(
         <View style={styles.container} >
-            <View style={{flexDirection: "row", marginTop: 8}} >
-                <Image style={styles.home} source={require("../Images/Icons/home.png")} />
-                <Image style={styles.add} source={require("../Images/Icons/add.png")} />
+            <View style={styles.icons} >
+                <TouchableOpacity style={styles.home}>
+                     <Entypo name="home" size={30} color="white" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.add}>
+                    <FontAwesome name="bolt" size={30} color="white" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.profile}>
+                    <Ionicons name="person" size={30} color="white" />
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -14,18 +26,39 @@ export default function Footer() {
 
 const styles = StyleSheet.create({
     container: {
-        height: 35,
+        height: 50,
         width: "100%",
         alignItems: "center",
         backgroundColor: "#f3833f",
         justifyContent: "center"
     },
-    add: {
-        height: 20,
-        width: 20
+    icons:{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center"    
     },
-    home:{
-        height: 20,
-        width: 20
+    profile:{
+        marginLeft:"10%",
+        marginRight:"10%",
+    },
+    home: {
+        marginLeft:"10%",
+        marginRight:"10%",
+    },
+    add:{
+        marginLeft:"10%",
+        marginRight:"10%",
+    },
+    theme:{
+        marginLeft:"10%",
+        marginRight:"10%",
     }
 });
+
+
+
+/*
+<TouchableOpacity style={styles.theme}>
+<MaterialIcons name="lightbulb" size={30} color="white" />
+</TouchableOpacity>
+*/

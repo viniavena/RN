@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList} from 'react-native';
 import Item from '../../Components/Item';
 import Header from '../../Components/Header';
 import TalesDiv from '../../Components/TalesDiv';
+import Footer from '../../Components/Footer';
 
 export default function Feed() {
     const picList = [
@@ -62,6 +63,7 @@ export default function Feed() {
             keyExtractor={item => item.id.toString()}
             renderItem={({ item }) => < Item userName={item.userName} picsSource={item.picsSource} subtitle={item.subtitle} said={item.said} numLikes={item.numLikes}/>
         }/>
+        <Footer />
     </View>
     );
 }
