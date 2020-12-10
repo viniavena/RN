@@ -60,7 +60,7 @@ export function Feed() {
         }
     ]);
 
-    const function AddPost(){
+    function AddPost(){
         const newPost = {
             id: 7,
             userName: "consultor_fluxo",
@@ -73,7 +73,7 @@ export function Feed() {
         newList.push(newPost);
 
         setList(newList);
-    }
+    };
 
     return(
     <View style={styles.container}>
