@@ -12,7 +12,7 @@ export default function Feed() {
             picsSource: require("../../Components/Images/Posts/post1.png"),
             subtitle: "Classic 🤙",
             said: "dudu_henriques: Haole",
-            likes: 23
+            numLikes: 23
         },
     
         {
@@ -21,7 +21,7 @@ export default function Feed() {
             picsSource: require("../../Components/Images/Posts/post2.png"),
             subtitle: "Vivendo ✌️",
             said: "bruno_aguiar: Fotão",
-            likes: 15
+            numLikes: 15
         },
     
         {
@@ -30,7 +30,7 @@ export default function Feed() {
             picsSource: require("../../Components/Images/Posts/post3.png"),
             subtitle: "❄️🥶🏔",
             said: "gabriel_pupe: ❄️🤩 ",
-            likes: 11
+            numLikes: 11
         },
     
         {
@@ -39,7 +39,7 @@ export default function Feed() {
             picsSource: require("../../Components/Images/Posts/post4.png"),
             subtitle: "Que sede 🐫🤤🥵 ",
             said: "isabela_farina: Que lindo 😍",
-            likes: 26
+            numLikes: 26
         }
     ];
 

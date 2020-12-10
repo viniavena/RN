@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {View, StyleSheet, Text, Image, TouchableOpacity} from "react-native";
 
 export default function Item({userName, picsSource, subtitle, said, numLikes}){
-    const[counter,setCounter] = useState (0)
+    const[counter,setCounter] = useState (numLikes)
     function increment (){
         setCounter (counter+1);
     }
