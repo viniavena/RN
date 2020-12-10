@@ -1,7 +1,20 @@
 import React, {useState} from "react"
 import {View, StyleSheet, Text, Image, TouchableOpacity} from "react-native";
 
+
+
 export default function Item({userName, picsSource, subtitle, said, numLikes}){
+    function renderImage() {
+        if(picsSource){
+            return(
+                <Image style={styles.pics} source={picsSource}/>
+            );
+        }
+        else{
+            return null;
+        }
+    }
+
     const[counter,setCounter] = useState (numLikes)
     function increment (){
         setCounter (counter+1);
@@ -9,7 +22,7 @@ export default function Item({userName, picsSource, subtitle, said, numLikes}){
 
     return(
     <View style={styles.container}>
-        <Image style={styles.pics} source={picsSource}/>
+        {renderImage()}
         <View style={styles.subtitleContainer}>
              <Text style={styles.nameSub}>{userName}: {subtitle}</Text>
         </View>
