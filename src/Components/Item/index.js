@@ -10,11 +10,13 @@ export default function Item({userName, picsSource, subtitle, said, numLikes}){
     return(
     <View style={styles.container}>
         <Image style={styles.pics} source={picsSource}/>
-        <Text style={styles.nameSub}>{userName}: {subtitle}</Text>
+        <View style={styles.subtitleContainer}>
+             <Text style={styles.nameSub}>{userName}: {subtitle}</Text>
+        </View>
         <View style={styles.line}></View>
         <Text style={styles.saidTitles}>Comentários:</Text>
         <Text style={styles.said}>{said}</Text>
-        <View style={{flexDirection: "row", marginTop: 4}} >
+        <View style={{flexDirection: "row", marginTop: 4, marginBottom: 10}} >
             <TouchableOpacity onPress={increment}>
                 <Image style={styles.like} source={require("../Images/Icons/like.png")} />
             </TouchableOpacity>
@@ -30,7 +32,6 @@ const styles = StyleSheet.create({
     container:{
         marginTop: 17,
         marginBottom:15,
-        height: 415,
         width: 315,
         flexDirection: "column",
         alignItems:"center", 
@@ -57,7 +58,6 @@ const styles = StyleSheet.create({
     },
     pics:{
         marginTop:15,
-        height:280,
         width:280,
         justifyContent:"center",
         alignItems:"center",
@@ -73,6 +73,12 @@ const styles = StyleSheet.create({
         fontWeight: "normal",
         fontSize: 15,
         color: "#1a1a1a"
+    },
+    subtitleContainer:{
+        marginLeft: -20,
+        width:300,
+        justifyContent:"center",
+        alignItems:"center",
     },
     saidTitles:{
         marginLeft: 20,
@@ -108,15 +114,11 @@ const styles = StyleSheet.create({
         tintColor: "#f3833f",
     },
     countLikes:{
-        marginTop:10,
-        marginRight:20,
-        marginLeft:60,
-        height: 20,
-        width:35,
+        alignSelf: "center",
+        marginLeft:"-5%",
         fontSize: 12,
         color: "#1a1a1a",
         fontWeight: "bold",
-        position:"absolute",
     },
     comment:{
         marginRight:20,
