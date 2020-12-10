@@ -1,7 +1,12 @@
-import React from "react";
-import {View, StyleSheet, Text, Image} from "react-native";
+import React, {useState} from "react"
+import {View, StyleSheet, Text, Image, TouchableOpacity} from "react-native";
 
-export default function Item({userName, picsSource, subtitle, said}){
+export default function Item({userName, picsSource, subtitle, said, numLikes}){
+    const[counter,setCounter] = useState (0)
+    function increment (){
+        setCounter (counter+1);
+    }
+
     return(
     <View style={styles.container}>
         <Image style={styles.pics} source={picsSource}/>
@@ -10,9 +15,12 @@ export default function Item({userName, picsSource, subtitle, said}){
         <Text style={styles.saidTitles}>Comentários:</Text>
         <Text style={styles.said}>{said}</Text>
         <View style={{flexDirection: "row", marginTop: 4}} >
+            <TouchableOpacity onPress={increment}>
                 <Image style={styles.like} source={require("../Images/Icons/like.png")} />
-                <Image style={styles.comment} source={require("../Images/Icons/comment.png")} />
-                <Image style={styles.comment} source={require("../Images/Icons/send.png")} />
+            </TouchableOpacity>
+            <Text style = {styles.countLikes}> {counter} </Text>
+            <Image style={styles.comment} source={require("../Images/Icons/comment.png")} />
+            <Image style={styles.comment} source={require("../Images/Icons/send.png")} />
         </View>
     </View>
     );
@@ -99,6 +107,17 @@ const styles = StyleSheet.create({
         width:35,
         tintColor: "#f3833f",
     },
+    countLikes:{
+        marginTop:10,
+        marginRight:20,
+        marginLeft:60,
+        height: 20,
+        width:35,
+        fontSize: 12,
+        color: "#1a1a1a",
+        fontWeight: "bold",
+        position:"absolute",
+    },
     comment:{
         marginRight:20,
         marginLeft:20,
@@ -115,17 +134,3 @@ const styles = StyleSheet.create({
     }
 })
 
-
-
-
-
-/*
-
-            <Text style={styles.name}>{userName}</Text>,
-           <Image style={styles.pics} source={picsSource}/>,
-            <Text style={styles.subtitle}>{subtitle}</Text>,
-            <Text style={styles.said}>{said}</Text>
-
-
-
-*/

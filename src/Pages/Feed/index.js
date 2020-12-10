@@ -11,7 +11,8 @@ export default function Feed() {
             userName: "gabriel_pupe",
             picsSource: require("../../Components/Images/Posts/post1.png"),
             subtitle: "Classic 🤙",
-            said: "dudu_henriques: Haole"
+            said: "dudu_henriques: Haole",
+            likes: 23
         },
     
         {
@@ -19,7 +20,8 @@ export default function Feed() {
             userName: "vini_avena",
             picsSource: require("../../Components/Images/Posts/post2.png"),
             subtitle: "Vivendo ✌️",
-            said: "bruno_aguiar: Fotão"
+            said: "bruno_aguiar: Fotão",
+            likes: 15
         },
     
         {
@@ -27,7 +29,8 @@ export default function Feed() {
             userName: "isabela_farina",
             picsSource: require("../../Components/Images/Posts/post3.png"),
             subtitle: "❄️🥶🏔",
-            said: "gabriel_pupe: ❄️🤩 "
+            said: "gabriel_pupe: ❄️🤩 ",
+            likes: 11
         },
     
         {
@@ -35,7 +38,8 @@ export default function Feed() {
             userName: "julia_chagas",
             picsSource: require("../../Components/Images/Posts/post4.png"),
             subtitle: "Que sede 🐫🤤🥵 ",
-            said: "isabela_farina: Que lindo 😍"
+            said: "isabela_farina: Que lindo 😍",
+            likes: 26
         }
     ];
 
@@ -47,7 +51,7 @@ export default function Feed() {
             showsVerticalScrollIndicator ={false}
             data={list}
             keyExtractor={item => item.id.toString()}
-            renderItem={({ item }) => < Item userName={item.userName} picsSource={item.picsSource} subtitle={item.subtitle} said={item.said}/>
+            renderItem={({ item }) => < Item userName={item.userName} picsSource={item.picsSource} subtitle={item.subtitle} said={item.said} numLikes={item.numLikes}/>
         }/>
     </View>
     );
