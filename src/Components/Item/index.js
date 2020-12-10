@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import {View, StyleSheet, Text, Image, TouchableOpacity} from "react-native";
 
 
-
 export default function Item({userName, picsSource, subtitle, said, numLikes}){
     function renderImage() {
         if(picsSource){
