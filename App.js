@@ -1,16 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import Header from './src/Components/Header';
-import TalesDiv from './src/Components/TalesDiv';
-import FeedDiv from './src/Components/FeedDiv';
+import { StyleSheet, View, StatusBar} from 'react-native';
+import Feed from  './src/Pages/Feed';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#f3833f"/>
-      <Header />
-      <TalesDiv />
-      <FeedDiv />
+      <Feed />
     </View>
   );
 }

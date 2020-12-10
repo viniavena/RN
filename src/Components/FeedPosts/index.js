@@ -1,5 +1,5 @@
 import React from "react";
-import {View, StyleSheet, Image, Text, TouchableOpacity} from "react-native";
+import {View, StyleSheet, Image, Text} from "react-native";
 
 export default function FeedPosts ({picsSource, userName}){
     return(
@@ -64,10 +64,3 @@ const styles = StyleSheet.create({
         tintColor: "#f3833f",
     },
 })
-
-
-/*
-                <TouchableOpacity onPress={this._onPressButton}>
-                    <Image style={styles.like} source={require("../Images/Icons/like.png")} />
-                </TouchableOpacity>
-*/
