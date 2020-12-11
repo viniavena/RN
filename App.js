@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar} from 'react-native';
-import Footer from './src/Components/Footer';
 import Feed from  './src/Pages/Feed';
 import ProfileInfo from './src/Pages/ProfileInfo';
 
@@ -8,6 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#f3833f"/>
+      <Feed />
       <ProfileInfo/>
     </View>
   );
