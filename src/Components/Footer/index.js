@@ -11,7 +11,7 @@ const Footer = ({ AddPost }) => {
                 <TouchableOpacity style={styles.home}>
                      <Entypo name="home" size={30} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.add} onPress={(AddPost)}>
+                <TouchableOpacity style={styles.add} onPress={() => AddPost()}>
                     <FontAwesome name="bolt" size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.profile}>
@@ -20,7 +20,7 @@ const Footer = ({ AddPost }) => {
             </View>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     }
 });
 
+export default Footer;
 
 
 /*
