@@ -11,6 +11,7 @@ export default function TalesDiv(){
             <TalesPics picsSource={require("../Images/Tales/profile3.png")}  userName="John" />
             <TalesPics picsSource={require("../Images/Tales/profile4.png")}  userName="Carla"  />
             <TalesPics picsSource={require("../Images/Tales/profile5.png")}  userName="Mary" />
+            
         </ScrollView>
     </View>
     );
