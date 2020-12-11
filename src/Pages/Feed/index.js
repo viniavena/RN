@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, FlatList} from 'react-native';
+import { StyleSheet, View, FlatList, TextInput, KeyboardAvoidingView} from 'react-native';
 
 import Item from '../../Components/Item';
 import Header from '../../Components/Header';
@@ -12,7 +12,8 @@ const Feed = () => {
             id: 1,
             userName: "consultor_fluxo",
             subtitle: "Galera do PAME ta em choque 🤯",
-            said: "dudu_henriques: work hard 🔨💪"
+            said: "dudu_henriques: work hard 🔨💪",
+            numLikes: 0
         },
 
         {
@@ -60,20 +61,40 @@ const Feed = () => {
         }
     ]);
 
-    function AddPost(){
+    function AddPost(value){
         alert("Novos Posts: Carregue o seu feed");
         const lastIndex = picList.length - 1;
         const lastId = picList[lastIndex].id;
         const newPost = {
             id: lastId +1,
             userName: "consultor_fluxo",
-            subtitle: "Galera do PAME ta em choque 🤯 ",
+            subtitle: value,
+            numLikes: 0
         };
 
         let newList = picList;
         newList.push(newPost);
         setList(newList);
     };
+
+    const WriteText = () => {
+        const [value, onChangeText] = React.useState('');
+        return (
+        <KeyboardAvoidingView style={{ width: "100%"}} behavior='position' >
+            <TextInput 
+            style={{ minHeight:30 ,width: "100%", borderWidth: 1 , borderColor: "#f3833f", color:"white", backgroundColor: "#1a1a1a"}}
+            maxLength={200}
+            autoFocus={true}
+            keyboardAppearance={"dark"}
+            multiline={true}
+            onChangeText={text => onChangeText(text)}
+            value={value}
+            placeholder = {"Diga ai caveira!"}
+            placeholderTextColor = {"gray"}
+            autoFocus={true}/>
+        </KeyboardAvoidingView>
+        );
+      }
 
 
     return (
@@ -95,6 +116,7 @@ const Feed = () => {
               />
             )}
           />
+          <WriteText />
           <Footer AddPost={AddPost} />
         </View>
       );

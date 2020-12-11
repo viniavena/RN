@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#f3833f"/>
-      <ProfileInfo/>
+      <Feed/>
 
     </View>
   );
