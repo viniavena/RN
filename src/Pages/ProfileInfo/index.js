@@ -1,113 +1,101 @@
 import React,{useState} from "react";
-import {View,Image,Text,StyleSheet,TouchableOpacity} from "react-native";
+import {View,Image,Text,StyleSheet, FlatList} from "react-native";
 
 
-import Header from '../../Components/Header';
-
+import Item from '../../Components/Item';
+import Footer from '../../Components/Footer';
 
 
 export default function FeedPosts ({picsSource, userName}){
 
-    const[counter,setCounter] = useState (0)
-    function increment (){
-        setCounter (counter+1);
-    }
-    
+    const profileList = [
+        {
+            id: 3,
+            userName: "consultor_fluxo",
+            picsSource: require("../../Components/Images/Posts/somosCaveira.png"),
+            subtitle: "Somos todos 💀☠️ ",
+            said: "gabriel_pupe: Caveira neles! ",
+            numLikes: 16,
+        },
+
+        {
+            id: 2,
+            userName: "consultor_fluxo",
+            picsSource: require("../../Components/Images/Posts/coordCCE.png"),
+            subtitle: "Você conhece a coordenação CCE? 💀",
+            said: "bruno_aguiar: A melhor de todas",
+            numLikes: 14,
+        }
+    ];
+
     return(
 
         <View style = {styles.container}>
-            <Header />
-            
-            <View style = {styles.profileContainer}>
-                 <Image style={styles.logoName} source={require("../../Components/Images/Logo/logoName.png")}/>  
-                <Image style={styles.profilePics} source={require("../../Components/Images/Tales/profile6.png")}/>
+            <View style = {{flexDirection: "column", alignItems: "center", justifyContent:"center" , backgroundColor:"#f3833f" , width: "100%"}}>
+                 <Text style = {styles.UserName}>consultor_fluxo</Text>
+                <View style = {styles.profileContainer}>
+                    <Image style={styles.profilePics} source={require("../../Components/Images/Tales/profile6.png")}/>
+                    <Text style = {styles.selfPosts}>Thunders: 2</Text>
+                    <Text style = {styles.selfFollow}>Caveiras: 1.250</Text>
+                </View>
+                <Text style = {styles.bioPerfil}>•Consultor da Empresa Júnior de Consultoria em Engenharia da UFRJ.</Text>
             </View>
-            <Text style = {styles.UserName}>Consultor_Fluxo</Text>
-            <Text style = {styles.bioPerfil}>Estamos aqui para ajudar</Text>
-            <Text style = {styles.selfFollow}>Caveiras: 1.250</Text>
-            <Text style = {styles.selfPosts}>Thunders: 2</Text>
-            <View style = {styles.containerFeed}>
-                <Image style={styles.profileFeed} source={require("../../Components/Images/Posts/post5.png")}/>
-                <Text style={styles.name}>Consultor_Fluxo: Juntos vamos mais longe!</Text>
-            <View style={styles.line}></View>
-            <Text style={styles.saidTitles}>Comentários:</Text>
-            <Text style={styles.said}>gabriel_pupe: É isso!</Text>
-            <View style={{flexDirection: "row", marginTop: 8}} >
-            <TouchableOpacity onPress={increment}>
-                <Image style={styles.like} source={require('../../Components/Images/Icons/like.png')} />
-            </TouchableOpacity>
-            <Text style = {styles.countLikes}> {counter} </Text>
-                <Image style={styles.comment} source={require("../../Components/Images/Icons/comment.png")} />
-                <Image style={styles.comment} source={require("../../Components/Images/Icons/send.png")} />
-            </View>
+            <FlatList
+            showsVerticalScrollIndicator={false}
+            data={profileList}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <Item
+                userName={item.userName}
+                picsSource={item.picsSource}
+                subtitle={item.subtitle}
+                said={item.said}
+                numLikes={item.numLikes}
+              />
+            )}
+          />
+        <Footer />
         </View>
-
-    </View>
- 
-    
-        
-     
     )
     
 }
 
 const styles = StyleSheet.create({
     container:{
-        height: 150,
-        width: "100%",
+        height:"100%",
+        width:"100%",
         alignItems: "center",
-        backgroundColor: "#f3833f",
-        justifyContent: "center"
     },
     profilePics:{
         height:60,
         width:60,
-        justifyContent:"center",
-        alignItems:"center",
         borderRadius: 10,
         borderWidth: 2,
-        borderColor: 'rgba(150,150,150, .4)',
-        position:"absolute",
-        top:635,
-        left:15
-    
-    
+        borderColor: 'rgba(150,150,150, .4)',  
+        left:"-40%"  
     },
-    logoName:{
-        position:"absolute",
-        top:560,
-        left:160,
-        
-        height: 33,
-        width: 100,
-        marginTop: 15
-    },
-
     profileContainer:{
         backgroundColor:"#f3833f",
-        height:100,
+        height:70,
         width:"100%",
-        flexDirection:"row"
+        flexDirection:"row",
+        justifyContent:"center",
+        alignItems:"center",
+
     },
     UserName:{
-        
+        marginTop: "6%",
         fontWeight: "bold",
         fontSize: 15,
         color: "white",
         alignItems: "center",
         justifyContent: "center",
-        position:"absolute",
-        top:80
 
     },
     bioPerfil:{
         fontSize: 15,
         color: "white",
-        alignItems: "center",
-        justifyContent: "center",
-        position:"absolute",
-        top:170,
-        left:30 
+        marginBottom: "5%"
 
     },
     selfFollow:{
@@ -116,42 +104,20 @@ const styles = StyleSheet.create({
         color: "white",
         alignItems: "center",
         justifyContent: "center",
-        position:"absolute",
-        top:110,
-        left:250
-        
+        marginLeft: 20
 
     },
     selfPosts:{
-
-    
         fontWeight: "bold",
         fontSize: 15,
         color: "white",
         alignItems: "center",
         justifyContent: "center",
-        position:"absolute",
-        top:110,
-        left:90
-    },
-    containerFeed:{
-
-
-        height:520,
-        marginTop: 700,
-        marginBottom:15,
-        width: 315,
-        flexDirection: "column",
-        alignItems:"center", 
-        borderRadius: 5,
-        backgroundColor: "rgba(200, 200, 200, 1)",
-        borderWidth: 5
-        
     },
 
     profileFeed:{
         marginTop:20,
-        width:280,
+        width:"100%",
         
         justifyContent:"center",
         alignItems:"center",
@@ -170,9 +136,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: "rgba(20, 20, 20, .2)"
 
-
-
-        
     },
     saidTitles:{
         marginLeft: 20,

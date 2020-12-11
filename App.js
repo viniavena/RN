@@ -7,8 +7,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#f3833f"/>
-      <Feed />
       <ProfileInfo/>
+
     </View>
   );
 }
@@ -20,3 +20,5 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+// <ProfileInfo/>

@@ -75,6 +75,7 @@ const Feed = () => {
         setList(newList);
     };
 
+
     return (
         <View style={styles.container}>
           <Header />
